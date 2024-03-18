@@ -10,3 +10,5 @@ TODOs:
 - Maybe find a pic to add
 - Get feedback on font
 - Work on the About section
+
+* Last Update: 2024/03/19
