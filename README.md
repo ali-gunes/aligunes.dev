@@ -11,4 +11,6 @@ TODOs:
 - Get feedback on font
 - Work on the About section
 
-* Last Update: 2024/03/19
+---
+
+. Last Update: 2024/03/19
