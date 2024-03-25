@@ -21,4 +21,10 @@ if (!sessionStorage.getItem('visited')) {
 
     localStorage.setItem('visitorCount', visitorCount.toString());
     sessionStorage.setItem('visited', 'true');
+} else {
+    // If visited, retrieve the visitor count from local storage and display
+    let visitorCount = localStorage.getItem('visitorCount');
+    if (visitorCount) {
+        document.getElementById('visitorCount').textContent = visitorCount;
+    }
 }
