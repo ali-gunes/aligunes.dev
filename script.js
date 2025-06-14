@@ -1,9 +1,16 @@
-function toggleMenu(){
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
+function toggleMobileMenu() {
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const body = document.body;
     
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
+    menuOverlay.classList.toggle('open');
+    body.classList.toggle('no-scroll');
+    
+    // Prevent background scrolling when menu is open
+    if (body.classList.contains('no-scroll')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
 }
 
 // Dark Mode Toggle Functionality
@@ -71,4 +78,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileThemeToggle) {
         mobileThemeToggle.addEventListener('click', toggleTheme);
     }
+    
+    // Close mobile menu when clicking a link that navigates to an anchor
+    document.querySelectorAll('.mobile-menu-links a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            toggleMobileMenu();
+        });
+    });
 });

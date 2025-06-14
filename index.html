@@ -25,28 +25,50 @@
         </div>
     </nav>
 
-    <nav id="hamburger-nav">
-        <div class="logo">Ali Güneş</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                <li style="display: flex; justify-content: center; margin-top: 10px;">
-                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-                        <img src="assets/moon.svg" alt="Dark Mode" class="dark-mode-icon">
-                        <img src="assets/sun.svg" alt="Light Mode" class="light-mode-icon">
-                    </button>
-                </li>
-            </div>
+    <nav id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">Ali Güneş</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </nav>
+
+    <!-- Full screen mobile menu overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="logo">Ali Güneş</div>
+                <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMobileMenu()">
+                    <span class="close-icon">×</span>
+                </button>
+            </div>
+            <ul class="mobile-menu-links">
+                <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMobileMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMobileMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <img src="assets/moon.svg" alt="Dark Mode" class="dark-mode-icon">
+                    <img src="assets/sun.svg" alt="Light Mode" class="light-mode-icon">
+                </button>
+                <div class="mobile-social-links">
+                    <a href="https://www.linkedin.com/in/kepcejeff/" target="_blank">
+                        <img src="./assets/linkedin.png" alt="LinkedIn" class="icon">
+                    </a>
+                    <a href="https://www.github.com/ali-gunes/" target="_blank">
+                        <img src="./assets/github.png" alt="GitHub" class="icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="profile">
         <!-- <div class="section__pic-container">

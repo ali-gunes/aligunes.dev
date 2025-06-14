@@ -16,7 +16,7 @@
     #desktop-nav {
       display: none;
     }
-    #hamburger-nav {
+    #mobile-nav {
       display: flex;
     }
     #skills,
@@ -36,6 +36,7 @@
     }
     section {
       margin: 0 5%;
+      padding-top: 6rem;
     }
     .section__pic-container {
       width: 275px;
@@ -55,6 +56,7 @@
     #profile {
       height: 83vh;
       margin-bottom: 0;
+      padding-top: 5rem;
     }
     article {
       font-size: 1rem;
@@ -102,5 +104,9 @@
     }
     .text-container {
       text-align: justify;
+    }
+    
+    .mobile-menu-links a {
+      font-size: 1.75rem;
     }
   }

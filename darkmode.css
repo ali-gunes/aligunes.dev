@@ -234,8 +234,6 @@ body.dark-mode .quote::after {
     color: var(--text-light);
 }
 
-
-
 body.dark-mode footer a {
     color: var(--text-color);
 }
@@ -309,4 +307,30 @@ body.dark-mode .dark-mode-icon {
 
 .dark-mode-icon {
     display: block;
+}
+
+/* Mobile navigation in dark mode */
+body.dark-mode #mobile-nav {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .hamburger-icon span {
+    background-color: var(--text-color);
+}
+
+body.dark-mode .mobile-menu-overlay {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .mobile-menu-close {
+    color: var(--text-color);
+}
+
+body.dark-mode .mobile-menu-links a {
+    color: var(--text-color);
+}
+
+body.dark-mode .mobile-menu-links a:hover {
+    color: var(--link-color);
 } 
