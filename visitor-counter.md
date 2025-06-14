@@ -46,4 +46,80 @@ The simple visitor counter uses:
 - **localStorage**: To store the total count persistently across browser sessions
 - **sessionStorage**: To remember visitors during their current session and prevent duplicate counting
 
-This implementation ensures a smooth user experience with no external dependencies. 
+This implementation ensures a smooth user experience with no external dependencies.
+
+# Visitor Counter Options
+
+The current visitor counter on aligunes.dev displays a placeholder value. To implement a true visitor counter that shows the same count to all visitors, you'll need a server-side solution.
+
+## Current Implementation
+
+The current implementation simply displays a placeholder value ("1,337"). This is not a real count but demonstrates where the visitor count would appear.
+
+## Options for a Real Visitor Counter
+
+To implement a true visitor counter that all visitors see the same number, you have several options:
+
+### 1. Firebase Realtime Database
+
+**Pros:**
+- Easy to set up
+- Free tier available
+- Real-time updates
+- No server required
+
+**Implementation Steps:**
+1. Create a Firebase project
+2. Set up Realtime Database
+3. Add Firebase SDK to your site
+4. Increment counter on new visits
+5. Display the global count to all users
+
+### 2. Server-side API
+
+**Pros:**
+- Complete control
+- Can track more visitor data
+- More secure
+
+**Implementation Steps:**
+1. Create a simple API endpoint (Node.js, Python, etc.)
+2. Store count in a database
+3. Call API from your site to increment/fetch count
+
+### 3. Netlify/Vercel Functions
+
+**Pros:**
+- Integrates with your current hosting
+- Serverless approach
+- Free tier available
+
+**Implementation Steps:**
+1. Create a serverless function
+2. Use a database like FaunaDB
+3. Call function to increment/fetch count
+
+### 4. Third-party Services
+
+**Pros:**
+- No coding required
+- Quick to implement
+
+**Options:**
+- Google Analytics (free)
+- Simple Analytics ($9/mo)
+- Plausible ($9/mo)
+- Fathom ($14/mo)
+
+## Recommended Approach
+
+For a simple portfolio site, the Firebase approach offers the best balance of ease of implementation, cost (free), and functionality. It requires no backend server while providing a real-time, global visitor count.
+
+If you'd like to implement this solution, the following steps would be required:
+
+1. Create a Firebase project
+2. Set up Firestore or Realtime Database
+3. Add Firebase SDK to your site
+4. Update the visitor counter code to use Firebase
+
+This would give all visitors the same, accurate count of total site visits. 

@@ -79,20 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show loading state initially
         visitorCountElement.textContent = "...";
         
-        // Check if this is a new visitor session
-        const isNewVisit = !sessionStorage.getItem('visited');
+        // For demonstration, we'll use a fixed starting count
+        // In a real implementation, you would replace this with a server-side solution
+        visitorCountElement.textContent = "1,337";
         
-        // Get the current count from localStorage
-        let visitorCount = parseInt(localStorage.getItem('simpleVisitorCount') || '0');
-        
-        // Increment count for new visits
-        if (isNewVisit) {
-            visitorCount++;
-            localStorage.setItem('simpleVisitorCount', visitorCount.toString());
-            sessionStorage.setItem('visited', 'true');
-        }
-        
-        // Display the count
-        visitorCountElement.textContent = visitorCount.toLocaleString();
+        // Note: For a true visitor counter visible to all users, you would need one of these options:
+        // 1. A backend server to track visits
+        // 2. A database service like Firebase
+        // 3. A specialized analytics API
+        // 4. A static site with build-time visitor count updates
     }
 });
