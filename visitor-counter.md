@@ -1,6 +1,6 @@
 # Visitor Counter Documentation
 
-The visitor counter on aligunes.dev uses [CountAPI](https://countapi.xyz/), a free and simple counting API service that allows tracking unique visitors across all browsers and devices.
+The visitor counter on aligunes.dev uses [CountAPI](https://countapi.xyz/) with an improved implementation that includes timeout handling and robust fallback mechanisms.
 
 ## How It Works
 
@@ -12,9 +12,10 @@ The visitor counter on aligunes.dev uses [CountAPI](https://countapi.xyz/), a fr
    - For new visitors: The script calls `https://api.countapi.xyz/hit/aligunes.dev/visits` which increments the counter by 1
    - For returning visitors: The script calls `https://api.countapi.xyz/get/aligunes.dev/visits` which just retrieves the current count
 
-3. **Fallback Mechanism**:
-   - If the CountAPI service is unavailable, the counter falls back to using localStorage
-   - This ensures visitors always see a number instead of an error
+3. **Enhanced Reliability**:
+   - The script uses a timeout mechanism to prevent hanging if the API is slow
+   - If the CountAPI service is unavailable or times out, the counter falls back to using localStorage
+   - This ensures visitors always see a number instead of an error or infinite loading
 
 ## Testing vs. Production
 
@@ -43,11 +44,12 @@ You can check your current visitor count directly through the API:
 
 ## Technical Implementation
 
-The visitor counter uses:
+The improved visitor counter uses:
 
 - **CountAPI**: For centralized counting across all visitors
+- **Promise with timeout**: To handle API failures gracefully and prevent hanging
 - **sessionStorage**: To remember visitors during their current session
 - **localStorage**: As a fallback if the API is unavailable
 - **Fetch API**: To make asynchronous requests to the counting service
 
-This implementation ensures accurate counting while providing a smooth user experience even if the external API has issues. 
+This implementation ensures accurate counting while providing a smooth user experience even if the external API has issues or is slow to respond. 
