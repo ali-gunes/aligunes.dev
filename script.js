@@ -72,89 +72,27 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileThemeToggle.addEventListener('click', toggleTheme);
     }
     
-    // Improved visitor counter implementation
+    // Simple visitor counter implementation
     const visitorCountElement = document.getElementById('visitorCount');
     
-    // Show loading state
     if (visitorCountElement) {
+        // Show loading state initially
         visitorCountElement.textContent = "...";
-    }
-
-    // Function to update the visitor counter
-    const updateVisitorCount = () => {
-        // Get stored count from localStorage as fallback
-        let localCount = localStorage.getItem('visitorCount') || '0';
-        localCount = parseInt(localCount, 10);
         
-        // Determine if this is a new visit for this session
+        // Check if this is a new visitor session
         const isNewVisit = !sessionStorage.getItem('visited');
         
-        // For testing locally vs production
-        const namespace = window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1') 
-            ? 'aligunes.dev.test' 
-            : 'aligunes.dev';
+        // Get the current count from localStorage
+        let visitorCount = parseInt(localStorage.getItem('simpleVisitorCount') || '0');
         
-        // Try both CountAPI and a backup API to ensure reliability
-        // Primary API: CountAPI
-        const countApiUrl = isNewVisit 
-            ? `https://api.countapi.xyz/hit/${namespace}/visits` 
-            : `https://api.countapi.xyz/get/${namespace}/visits`;
-            
-        // Use a Promise with timeout to handle API failures gracefully
-        const fetchWithTimeout = (url, options = {}, timeout = 3000) => {
-            return Promise.race([
-                fetch(url, options),
-                new Promise((_, reject) => 
-                    setTimeout(() => reject(new Error('Request timed out')), timeout)
-                )
-            ]);
-        };
+        // Increment count for new visits
+        if (isNewVisit) {
+            visitorCount++;
+            localStorage.setItem('simpleVisitorCount', visitorCount.toString());
+            sessionStorage.setItem('visited', 'true');
+        }
         
-        // Try to use the CountAPI service
-        fetchWithTimeout(countApiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data && data.value) {
-                    // Use the API count
-                    if (visitorCountElement) {
-                        visitorCountElement.textContent = data.value.toLocaleString();
-                    }
-                    
-                    // Store the count locally as fallback
-                    localStorage.setItem('visitorCount', data.value);
-                    
-                    // Mark as visited for this session
-                    sessionStorage.setItem('visited', 'true');
-                } else {
-                    throw new Error('Invalid data from API');
-                }
-            })
-            .catch(error => {
-                console.warn('CountAPI error:', error);
-                useFallbackCounter();
-            });
-            
-        // Fallback counter implementation
-        const useFallbackCounter = () => {
-            // If this is a new visit, increment the local counter
-            if (isNewVisit) {
-                localCount++;
-                localStorage.setItem('visitorCount', localCount);
-                sessionStorage.setItem('visited', 'true');
-            }
-            
-            // Display the local count
-            if (visitorCountElement) {
-                visitorCountElement.textContent = localCount.toLocaleString();
-            }
-        };
-    };
-    
-    // Update the visitor count
-    updateVisitorCount();
+        // Display the count
+        visitorCountElement.textContent = visitorCount.toLocaleString();
+    }
 });
