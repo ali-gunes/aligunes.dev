@@ -1,0 +1,12 @@
+{
+  "name": "aligunes-portfolio",
+  "version": "1.0.0",
+  "description": "Ali Güneş Personal Portfolio",
+  "scripts": {
+    "dev": "serve",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+} 

@@ -6,17 +6,22 @@
     <title>Ali Güneş</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="darkmode.css">
 </head>
 <body>
     <nav id="desktop-nav">
         <div class="logo">Ali Güneş</div>
-        <div>
+        <div style="display: flex; align-items: center;">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                <img src="assets/moon.svg" alt="Dark Mode" class="dark-mode-icon">
+                <img src="assets/sun.svg" alt="Light Mode" class="light-mode-icon">
+            </button>
         </div>
     </nav>
 
@@ -33,6 +38,12 @@
                 <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li style="display: flex; justify-content: center; margin-top: 10px;">
+                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                        <img src="assets/moon.svg" alt="Dark Mode" class="dark-mode-icon">
+                        <img src="assets/sun.svg" alt="Light Mode" class="light-mode-icon">
+                    </button>
+                </li>
             </div>
         </div>
     </nav>
@@ -451,21 +462,21 @@
         <div class="section__text__p1">Get in Touch</div>
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
-            <div class="contact-info-container">
+            <!-- <div class="contact-info-container">
                 <img 
                 src="./assets/email.png" 
                 alt="E-Mail Me" 
                 class="icon contact-icon email-icon"
                 />
                 <p><a href="mailto:hello@aligunes.dev">hello@aligunes.dev</a></p>
-            </div>
+            </div> -->
             <div class="contact-info-container">
                 <img 
                 src="./assets/linkedin.png" 
                 alt="LinkedIn Icon" 
                 class="icon contact-icon"
                 />
-                <p><a href="https://www.linkedin.com/in/kepcejeff/" target="_blank">Find Me on LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/in/kepcejeff/" target="_blank">LinkedIn</a></p>
             </div>
             <div class="contact-info-container">
                 <img 
@@ -490,10 +501,13 @@
                 </ul>
             </div>
         </nav>
+        <div class="quote-container" onclick="displayRandomQuote()" title="Click for another quote">
+            <p id="random-quote" class="quote"></p>
+        </div>
         <p>Ali Güneş</p>
-        <p>Copyright &#169; 2024</p>
+        <p>Copyright &#169; 2025</p>
         <p>All Rights Reserved</p>
-        <p>Your visitor number is <span id="visitorCount">0</span></p>
+        <p>You are visitor #<span id="visitorCount">...</span></p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,0 +1,320 @@
+/* Dark Mode Styles */
+:root.dark-mode {
+    --background-color: #121212;
+    --text-color: #e2e2e2;
+    --text-light: #aaa;
+    --border-color: #444;
+    --button-bg: #333;
+    --button-text: #fff;
+    --button-hover-bg: #555;
+    --card-bg: #1e1e1e;
+    --link-color: #61dafb;
+    --link-hover-color: #4db8e5;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Override SVG colors for dark mode */
+body.dark-mode svg {
+    stroke: var(--link-color);
+}
+
+/* Make theme toggle icons more visible */
+body.dark-mode .theme-toggle img {
+    filter: invert(80%);
+}
+
+/* Style social icons in dark mode */
+body.dark-mode #socials-container img {
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-mode #socials-container img:hover {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+    transform: translateY(-3px);
+}
+
+/* Base styles */
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navigation */
+body.dark-mode nav {
+    background-color: var(--background-color);
+}
+
+body.dark-mode .logo {
+    color: var(--text-color);
+}
+
+body.dark-mode a {
+    color: var(--text-color);
+    text-decoration-color: var(--background-color);
+}
+
+body.dark-mode a:hover {
+    color: var(--link-color);
+    text-decoration-color: var(--link-color);
+}
+
+/* Hamburger Menu */
+body.dark-mode .hamburger-icon span {
+    background-color: var(--text-color);
+}
+
+body.dark-mode .menu-links {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .menu-links a {
+    color: var(--text-color);
+}
+
+/* Text colors */
+body.dark-mode p {
+    color: var(--text-light);
+}
+
+body.dark-mode .section__text__p1,
+body.dark-mode .section__text__p2,
+body.dark-mode .title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: var(--text-color);
+}
+
+/* Buttons */
+body.dark-mode .btn-color-1,
+body.dark-mode .btn-color-2 {
+    border: var(--text-light) 0.1rem solid;
+}
+
+body.dark-mode .btn-color-1,
+body.dark-mode .btn-color-2:hover {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+body.dark-mode .btn-color-1:hover {
+    background: var(--button-hover-bg);
+}
+
+body.dark-mode .btn-color-2 {
+    background: none;
+    color: var(--text-color);
+}
+
+/* Cards and containers */
+body.dark-mode .details-container {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .color-container {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .color-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(97, 218, 251, 0.2);
+}
+
+body.dark-mode .project-img {
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .color-container:hover .project-img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+body.dark-mode article {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode article h3,
+body.dark-mode article p {
+    color: var(--text-color);
+}
+
+body.dark-mode .skills-sub-title {
+    color: var(--link-color);
+}
+
+/* Make about section icons visible in dark mode */
+body.dark-mode .details-container .icon {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .details-container .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Make checkmark icons visible in dark mode */
+body.dark-mode article .icon {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+}
+
+/* Style arrow navigation in dark mode */
+body.dark-mode .arrow {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+    animation: float 2s ease-in-out infinite;
+    transition: filter 0.3s ease;
+}
+
+body.dark-mode .arrow:hover {
+    filter: brightness(0) invert(1) sepia(1) saturate(8) hue-rotate(170deg);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Contact section */
+body.dark-mode .contact-info-container {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .contact-info-container p a {
+    color: var(--link-color);
+}
+
+body.dark-mode .contact-info-container p a:hover {
+    color: var(--link-hover-color);
+}
+
+body.dark-mode .contact-info-upper-container {
+    background-color: var(--background-color);
+}
+
+/* Make contact icons visible in dark mode */
+body.dark-mode .contact-icon {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-mode .contact-icon:hover {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(170deg);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode footer p {
+    color: var(--text-light);
+}
+
+body.dark-mode .quote {
+    color: var(--link-color);
+    text-shadow: 0 0 5px rgba(97, 218, 251, 0.3);
+}
+
+body.dark-mode .quote::before,
+body.dark-mode .quote::after {
+    color: var(--text-light);
+}
+
+/* Visitor counter styling for dark mode */
+body.dark-mode #visitorCount {
+    color: var(--link-color);
+    text-shadow: 0 0 3px rgba(97, 218, 251, 0.3);
+}
+
+body.dark-mode #visitorCount:hover {
+    text-shadow: 0 0 8px rgba(97, 218, 251, 0.6);
+}
+
+body.dark-mode footer a {
+    color: var(--text-color);
+}
+
+body.dark-mode footer a:hover {
+    color: var(--link-color);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(97, 218, 251, 0.2) 0%, rgba(97, 218, 251, 0) 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+    border-color: rgba(97, 218, 251, 0.5);
+}
+
+.theme-toggle:hover::before {
+    transform: scale(1.5);
+}
+
+.theme-toggle img {
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .theme-toggle:hover {
+    border-color: rgba(97, 218, 251, 0.7);
+    box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+}
+
+body.dark-mode .light-mode-icon {
+    display: block;
+}
+
+body.dark-mode .dark-mode-icon {
+    display: none;
+}
+
+.light-mode-icon {
+    display: none;
+}
+
+.dark-mode-icon {
+    display: block;
+} 

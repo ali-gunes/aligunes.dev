@@ -11,6 +11,7 @@
 
 body {
     font-family: "Atkinson Hyperlegible", sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 html {
@@ -420,4 +421,46 @@ footer {
 
 footer p {
     text-align: center;
+}
+
+.quote-container {
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.quote-container:hover {
+    transform: scale(1.02);
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+    position: relative;
+    padding: 0 20px;
+}
+
+.quote::before,
+.quote::after {
+    content: '"';
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.quote::after {
+    content: '"';
+}
+
+/* Visitor counter styling */
+#visitorCount {
+    font-weight: bold;
+    color: #3498db;
+    transition: all 0.3s ease;
+}
+
+#visitorCount:hover {
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
