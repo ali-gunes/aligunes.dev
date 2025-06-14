@@ -1,52 +1,64 @@
-# Simple Visitor Counter Documentation
+# Visitor Counter Documentation
 
-The visitor counter on aligunes.dev uses a simple localStorage-based implementation that doesn't rely on any external APIs.
+The visitor counter on aligunes.dev uses a Vercel serverless function to track and display the number of visitors to the site.
 
 ## How It Works
 
-1. **First Visit Detection**:
+1. **Serverless Function**:
+   - A Vercel serverless function (`/api/visitor-count.js`) maintains the visitor count
+   - The function responds to both GET and POST requests
+   - POST requests increment the counter (new visitors)
+   - GET requests simply return the current count (returning visitors)
+
+2. **First Visit Detection**:
    - When a new visitor comes to your site, the script checks if they've visited before during this browser session
    - This is done using `sessionStorage`, which persists only for the current browser tab session
-
-2. **Counting Process**:
-   - The counter retrieves the current count from localStorage
-   - For new visits (based on sessionStorage), it increments the count by 1
-   - The updated count is saved back to localStorage for persistence
+   - New visitors send a POST request to increment the counter
+   - Returning visitors send a GET request to just retrieve the current count
 
 3. **Benefits of This Approach**:
-   - No dependency on external APIs
-   - Works completely offline
-   - Fast and reliable
-   - No network requests needed
-
-## How the Counter Increases
-
-The visitor counter will increase by 1 when:
-
-1. A new visitor comes to your site for the first time
-2. A returning visitor opens your site in a new browser or device
-3. A returning visitor clears their browser data/localStorage
-4. A returning visitor visits after their session expires (typically when they close their browser)
-
-The counter will NOT increase when:
-
-1. A visitor refreshes the page during the same session
-2. A visitor navigates between different pages on your site during the same session
+   - All visitors see the same count
+   - No external API dependencies
+   - Integrated with your Vercel hosting
+   - No additional costs
 
 ## Important Notes
 
-- This counter is device/browser specific, meaning it counts unique browser sessions rather than truly unique visitors
-- The count is stored in the visitor's browser, so each visitor will see a different count based on their own browsing history
-- For a more accurate global counter visible to all visitors, you would need a server-side solution
+1. **In-Memory Storage Limitation**:
+   - The current implementation uses in-memory storage in the serverless function
+   - This means the count will reset whenever the function is redeployed or goes cold
+   - For a persistent count, you would need to add a database like FaunaDB or MongoDB
+
+2. **Future Enhancements**:
+   - Add a database for persistent storage
+   - Implement IP-based unique visitor tracking
+   - Add analytics for more detailed visitor information
+
+## How to Implement Persistent Storage
+
+To make the visitor counter persist across deployments, you can modify the serverless function to use a database:
+
+1. **FaunaDB** (recommended for Vercel):
+   - Sign up for a free FaunaDB account
+   - Create a database and collection for the visitor count
+   - Update the serverless function to use the FaunaDB JavaScript driver
+   - Store and retrieve the count from FaunaDB instead of in-memory
+
+2. **MongoDB Atlas**:
+   - Sign up for a free MongoDB Atlas account
+   - Create a cluster and collection
+   - Update the serverless function to use the MongoDB driver
+   - Store and retrieve the count from MongoDB
 
 ## Technical Implementation
 
-The simple visitor counter uses:
+The visitor counter uses:
 
-- **localStorage**: To store the total count persistently across browser sessions
-- **sessionStorage**: To remember visitors during their current session and prevent duplicate counting
+- **Vercel Serverless Functions**: To track and serve visitor counts
+- **sessionStorage**: To remember visitors during their current session
+- **Fetch API**: To make asynchronous requests to the counting service
 
-This implementation ensures a smooth user experience with no external dependencies.
+This implementation ensures all visitors see the same count while providing a smooth user experience.
 
 # Visitor Counter Options
 

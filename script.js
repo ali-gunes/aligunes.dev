@@ -72,21 +72,58 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileThemeToggle.addEventListener('click', toggleTheme);
     }
     
-    // Simple visitor counter implementation
+    // Visitor counter using Vercel serverless function
     const visitorCountElement = document.getElementById('visitorCount');
     
     if (visitorCountElement) {
         // Show loading state initially
         visitorCountElement.textContent = "...";
         
-        // For demonstration, we'll use a fixed starting count
-        // In a real implementation, you would replace this with a server-side solution
-        visitorCountElement.textContent = "1,337";
+        // Get API URL based on environment
+        const apiUrl = window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1')
+            ? 'http://localhost:3000/api/visitor-count'
+            : '/api/visitor-count';
+            
+        // Check if this is a new visit for this session
+        const isNewVisit = !sessionStorage.getItem('visited');
         
-        // Note: For a true visitor counter visible to all users, you would need one of these options:
-        // 1. A backend server to track visits
-        // 2. A database service like Firebase
-        // 3. A specialized analytics API
-        // 4. A static site with build-time visitor count updates
+        // Function to fetch the visitor count
+        const fetchVisitorCount = async () => {
+            try {
+                // Use POST for new visits to increment the counter, GET for returning visitors
+                const method = isNewVisit ? 'POST' : 'GET';
+                
+                const response = await fetch(apiUrl, { 
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Display the count
+                if (data && data.count !== undefined) {
+                    visitorCountElement.textContent = data.count.toLocaleString();
+                    
+                    // Mark as visited for this session
+                    if (isNewVisit) {
+                        sessionStorage.setItem('visited', 'true');
+                    }
+                } else {
+                    throw new Error('Invalid data from API');
+                }
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+                visitorCountElement.textContent = "?";
+            }
+        };
+        
+        // Fetch the visitor count
+        fetchVisitorCount();
     }
 });
