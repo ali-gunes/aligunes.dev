@@ -340,7 +340,7 @@ section {
     justify-content: center;
     gap: 5rem;
     height: 80vh;
-    padding-top: 0;
+    padding-top: 0; /* Reset padding for desktop */
 }
 
 .section__pic-container {
@@ -372,11 +372,13 @@ section {
 .title {
     font-size: 6rem;
     text-align: center;
+    line-height: 1.1;
+    margin: 0.5rem 0;
 }
 
 @media screen and (max-width: 768px) {
     .title {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     .section__text__p1 {
         margin-top: 1.5rem;
@@ -385,7 +387,37 @@ section {
 
 @media screen and (max-width: 480px) {
     .title {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+        line-height: 1;
+        margin: 0.3rem 0;
+    }
+    
+    #profile .section__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .section__text__p1 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    
+    .section__text__p2 {
+        font-size: 1.5rem;
+        margin: 1.2rem 0;
+    }
+    
+    .btn-container {
+        margin-top: 1rem;
+    }
+    
+    #socials-container {
+        margin-top: 1.5rem;
     }
 }
 

@@ -57,9 +57,12 @@
       height: 40vh;
     }
     #profile {
-      height: 83vh;
+      height: 90vh;
       margin-bottom: 0;
-      padding-top: 120px;
+      padding-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     article {
       font-size: 1rem;
