@@ -333,4 +333,15 @@ body.dark-mode .mobile-menu-links a {
 
 body.dark-mode .mobile-menu-links a:hover {
     color: var(--link-color);
+}
+
+/* Make social icons in mobile menu visible in dark mode */
+body.dark-mode .mobile-social-links img {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .mobile-social-links img:hover {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(170deg);
+    transform: scale(1.1);
 } 

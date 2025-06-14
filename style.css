@@ -316,6 +316,16 @@ a:hover {
     margin-top: 1rem;
 }
 
+.social-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
 /* SECTIONS */
 
 section {
