@@ -234,15 +234,7 @@ body.dark-mode .quote::after {
     color: var(--text-light);
 }
 
-/* Visitor counter styling for dark mode */
-body.dark-mode #visitorCount {
-    color: var(--link-color);
-    text-shadow: 0 0 3px rgba(97, 218, 251, 0.3);
-}
 
-body.dark-mode #visitorCount:hover {
-    text-shadow: 0 0 8px rgba(97, 218, 251, 0.6);
-}
 
 body.dark-mode footer a {
     color: var(--text-color);

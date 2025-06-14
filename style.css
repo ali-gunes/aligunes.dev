@@ -451,16 +451,6 @@ footer p {
 }
 
 .quote::after {
-    content: '"';
+    content: """;
 }
 
-/* Visitor counter styling */
-#visitorCount {
-    font-weight: bold;
-    color: #3498db;
-    transition: all 0.3s ease;
-}
-
-#visitorCount:hover {
-    text-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
