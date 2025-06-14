@@ -155,6 +155,10 @@ a:hover {
     right: 0;
     background-color: white;
     z-index: 100;
+    height: 70px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .mobile-nav-header {
@@ -162,6 +166,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .mobile-menu-toggle {
@@ -172,6 +177,8 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 48px;
+    height: 48px;
 }
 
 .hamburger-icon {
@@ -317,6 +324,7 @@ section {
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
+    position: relative;
 }
 
 .section-container {
@@ -331,6 +339,7 @@ section {
     justify-content: center;
     gap: 5rem;
     height: 80vh;
+    padding-top: 0;
 }
 
 .section__pic-container {
@@ -359,8 +368,20 @@ section {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 6rem;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 3.5rem;
+    }
 }
 
 #socials-container {
