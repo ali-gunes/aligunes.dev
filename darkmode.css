@@ -8,6 +8,7 @@
     --button-text: #fff;
     --button-hover-bg: #555;
     --card-bg: #1e1e1e;
+    --card-bg-darker: #202020;
     --link-color: #61dafb;
     --link-hover-color: #4db8e5;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -344,4 +345,28 @@ body.dark-mode .mobile-social-links img {
 body.dark-mode .mobile-social-links img:hover {
     filter: brightness(0) invert(0.8) sepia(1) saturate(5) hue-rotate(170deg);
     transform: translateY(-3px);
+}
+
+/* Project section */
+body.dark-mode .project-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .project-title {
+    color: var(--text-color);
+}
+
+body.dark-mode .project-description {
+    color: var(--text-light);
+}
+
+body.dark-mode .tech-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+body.dark-mode .project-img-container {
+    background-color: var(--card-bg-darker);
 } 
