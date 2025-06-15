@@ -376,6 +376,42 @@ section {
     margin: 0.5rem 0;
 }
 
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 5.5rem;
+        line-height: 1.1;
+        margin: 0.5rem 0;
+    }
+    
+    .section__text__p1 {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+    
+    .section__text__p2 {
+        font-size: 1.8rem;
+        margin: 1.2rem 0;
+    }
+    
+    .btn-container {
+        margin-top: 1.5rem;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem;
+        width: auto;
+        min-width: 8.5rem;
+    }
+    
+    #socials-container {
+        margin-top: 2rem;
+    }
+    
+    .icon {
+        height: 2.2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .title {
         font-size: 5rem;
