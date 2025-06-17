@@ -369,4 +369,28 @@ body.dark-mode .tech-tag {
 
 body.dark-mode .project-img-container {
     background-color: var(--card-bg-darker);
+}
+
+/* Project modal */
+body.dark-mode .project-modal {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+body.dark-mode .project-modal-close {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+body.dark-mode .project-modal-img-container {
+    background-color: var(--card-bg-darker);
+}
+
+body.dark-mode .project-modal-description {
+    color: var(--text-light);
+}
+
+body.dark-mode .project-card::after {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
 } 

@@ -431,7 +431,7 @@
         <p class="section__text__p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
         <div class="projects-container">
-            <div class="project-card">
+            <div class="project-card" onclick="openProjectModal('saydam-emek')">
                 <div class="project-img-container">
                     <img src="./assets/saydam-emek.svg" alt="Saydam Emek" class="project-img"/>
                 </div>
@@ -444,13 +444,13 @@
                         <span class="tech-tag">MongoDB</span>
                     </div>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/transparent-labour', '_blank')">Github</button>
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://saydamemek.com', '_blank')">Live Demo</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/transparent-labour', '_blank'); event.stopPropagation();">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://saydamemek.com', '_blank'); event.stopPropagation();">Live Demo</button>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openProjectModal('planning-poker')">
                 <div class="project-img-container">
                     <img src="./assets/planning-poker.svg" alt="Planning Poker" class="project-img"/>
                 </div>
@@ -463,13 +463,13 @@
                         <span class="tech-tag">Tailwind CSS</span>
                     </div>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/planning_poker', '_blank')">Github</button>
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://planning-poker-ochre.vercel.app/', '_blank')">Live Demo</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/planning_poker', '_blank'); event.stopPropagation();">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://planning-poker-ochre.vercel.app/', '_blank'); event.stopPropagation();">Live Demo</button>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openProjectModal('duel-of-champions')">
                 <div class="project-img-container">
                     <img src="./assets/duel-of-champions.svg" alt="Duel of Champions" class="project-img"/>
                 </div>
@@ -482,12 +482,12 @@
                         <span class="tech-tag">React</span>
                     </div>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/near-duel-of-champions', '_blank')">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/near-duel-of-champions', '_blank'); event.stopPropagation();">Github</button>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openProjectModal('image-manipulator')">
                 <div class="project-img-container">
                     <img src="./assets/image-manipulator.png" alt="Image Manipulator" class="project-img"/>
                 </div>
@@ -500,12 +500,12 @@
                         <span class="tech-tag">PyQT</span>
                     </div>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/image-manipulation', '_blank')">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ali-gunes/image-manipulation', '_blank'); event.stopPropagation();">Github</button>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" onclick="openProjectModal('go-to-moon')">
                 <div class="project-img-container">
                     <img src="./assets/coming-soon.jpg" alt="Go to Moon" class="project-img"/>
                 </div>
@@ -518,11 +518,28 @@
                         <span class="tech-tag">3D Modeling</span>
                     </div>
                     <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.github.com/ali-gunes/', '_blank')">Github</button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://www.github.com/ali-gunes/', '_blank'); event.stopPropagation();">Github</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Project Modal Overlay -->
+        <div class="project-modal-overlay" id="project-modal-overlay">
+            <div class="project-modal">
+                <button class="project-modal-close" onclick="closeProjectModal()">&times;</button>
+                <div class="project-modal-img-container">
+                    <img src="" alt="" class="project-modal-img" id="modal-project-img">
+                </div>
+                <div class="project-modal-content">
+                    <h2 class="project-modal-title" id="modal-project-title"></h2>
+                    <p class="project-modal-description" id="modal-project-description"></p>
+                    <div class="project-modal-tech" id="modal-project-tech"></div>
+                    <div class="btn-container" id="modal-project-buttons"></div>
+                </div>
+            </div>
+        </div>
+        
         <img 
         src="./assets/arrow.png" 
         alt="Next Section Arrow Icon" 
