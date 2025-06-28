@@ -525,15 +525,18 @@ section {
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .about-details-container {
     justify-content: center;
     flex-direction: column;
-}
-
-.about-containers, .about-details-container {
-    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-pic {
@@ -921,5 +924,11 @@ body.no-scroll {
 
 body.modal-open {
     overflow: hidden;
+}
+
+.text-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 

@@ -187,3 +187,27 @@
       font-size: 0.85rem;
     }
 }
+
+/* Extra-wide screens */
+@media screen and (min-width: 2000px) {
+    .about-details-container {
+        max-width: 1400px;
+    }
+    
+    .about-containers {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .text-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    section {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
