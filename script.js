@@ -65,7 +65,7 @@ const projectData = {
         title: 'Saydam Emek',
         description: 'Saydam Emek is a platform dedicated to bringing transparency to the Turkish labor market by creating an anonymous, community-driven salary information sharing platform. The platform aims to empower job seekers with real information about companies and working conditions.',
         image: './assets/saydam-emek.svg',
-        tech: ['React', 'Next.js', 'PostgreSQL', 'TypeScript', 'Express', 'JWT Authentication'],
+        tech: ['React', 'Vite', 'Next.js', 'PostgreSQL', 'TypeScript', 'Express.js', 'Prisma ORM', 'JWT Authentication'],
         links: [
             { text: 'Github', url: 'https://github.com/ali-gunes/transparent-labour' },
             { text: 'Web App', url: 'https://saydamemek.com' }
@@ -75,17 +75,17 @@ const projectData = {
         title: 'Planning Poker',
         description: 'An agile planning tool that helps teams estimate tasks collaboratively through a fun and interactive card-based system. Features real-time updates, session management, and result visualization to make sprint planning more efficient.',
         image: './assets/planning-poker.svg',
-        tech: ['Next.js', 'WebSockets', 'Tailwind CSS', 'React Hooks', 'Chart.js'],
+        tech: ['Next.js', 'WebSockets', 'PartyKit','Tailwind CSS', 'React Hooks', 'Chart.js'],
         links: [
             { text: 'Github', url: 'https://github.com/ali-gunes/planning_poker' },
-            { text: 'Live Demo', url: 'https://planning-poker-ochre.vercel.app/' }
+            { text: 'Web App', url: 'https://planning-poker-ochre.vercel.app/' }
         ]
     },
     'duel-of-champions': {
         title: 'Duel of Champions',
         description: 'A blockchain-based card game built on the NEAR protocol that allows players to battle with unique digital collectibles. The game features smart contracts for secure gameplay, ownership verification, and transparent transactions.',
         image: './assets/duel-of-champions.svg',
-        tech: ['NEAR Protocol', 'Rust', 'React', 'Web3.js', 'Smart Contracts'],
+        tech: ['NEAR Protocol', 'Rust', 'AssemblyScript', 'Shell', 'Smart Contracts'],
         links: [
             { text: 'Github', url: 'https://github.com/ali-gunes/near-duel-of-champions' }
         ]
@@ -94,20 +94,20 @@ const projectData = {
         title: 'Image Manipulator',
         description: 'A desktop application for image processing with various filters, transformations, and batch processing capabilities. The tool supports a wide range of image formats and provides an intuitive interface for both basic and advanced editing.',
         image: './assets/image-manipulator.png',
-        tech: ['Python', 'OpenCV', 'PyQT', 'NumPy', 'Scikit-Image'],
+        tech: ['Python', 'OpenCV', 'PyQt', 'NumPy', 'Scikit-Image', "Matplotlib"],
         links: [
             { text: 'Github', url: 'https://github.com/ali-gunes/image-manipulation' }
         ]
     },
-    'go-to-moon': {
-        title: 'Go to Moon',
-        description: 'An upcoming space exploration simulation game that allows players to build and manage their own space program. Players will design rockets, plan missions, and expand their space infrastructure while managing resources and research.',
-        image: './assets/coming-soon.jpg',
-        tech: ['Unity', 'C#', '3D Modeling', 'Physics Simulation', 'Procedural Generation'],
-        links: [
-            { text: 'Github', url: 'https://www.github.com/ali-gunes/' }
-        ]
-    }
+    // 'go-to-moon': {
+    //     title: 'Go to Moon',
+    //     description: 'An upcoming space exploration simulation game that allows players to build and manage their own space program. Players will design rockets, plan missions, and expand their space infrastructure while managing resources and research.',
+    //     image: './assets/coming-soon.jpg',
+    //     tech: ['Unity', 'C#', '3D Modeling', 'Physics Simulation', 'Procedural Generation'],
+    //     links: [
+    //         { text: 'Github', url: 'https://www.github.com/ali-gunes/' }
+    //     ]
+    // }
 };
 
 // Function to open project modal
