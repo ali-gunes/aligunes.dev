@@ -182,6 +182,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Display random quote
     displayRandomQuote();
     
+    // Start cat slideshow
+    startCatSlideshow();
+    
     // Add event listeners to theme toggle buttons
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -201,3 +204,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Cat slideshow functionality
+function startCatSlideshow() {
+    const catImages = document.querySelectorAll('.cat-slideshow .cat-image');
+    if (catImages.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    // Find the current active image
+    catImages.forEach((img, index) => {
+        if (img.classList.contains('active')) {
+            currentIndex = index;
+        }
+    });
+    
+    // Change image every 4 seconds
+    setInterval(() => {
+        // Remove active class from current image
+        catImages[currentIndex].classList.remove('active');
+        
+        // Move to next image, loop back to first if at the end
+        currentIndex = (currentIndex + 1) % catImages.length;
+        
+        // Add active class to new current image
+        catImages[currentIndex].classList.add('active');
+    }, 4000);
+}
