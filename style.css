@@ -321,11 +321,12 @@ a:hover {
 
 section {
     padding-top: 4vh;
-    height: 96vh;
+    height: auto;
+    min-height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
-    min-height: fit-content;
     position: relative;
+    padding-bottom: 4vh;
 }
 
 .section-container {
@@ -570,6 +571,9 @@ section {
 
 #skills {
     position: relative;
+    height: auto;
+    min-height: fit-content;
+    padding-bottom: 6rem;
 }
 
 .skills-sub-title {

@@ -63,12 +63,12 @@ function displayRandomQuote() {
 const projectData = {
     'saydam-emek': {
         title: 'Saydam Emek',
-        description: 'A platform that brings transparency to labor markets by allowing workers to share their experiences and salary information anonymously. The platform aims to empower job seekers with real information about companies and working conditions.',
+        description: 'Saydam Emek is a platform dedicated to bringing transparency to the Turkish labor market by creating an anonymous, community-driven salary information sharing platform. The platform aims to empower job seekers with real information about companies and working conditions.',
         image: './assets/saydam-emek.svg',
-        tech: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT Authentication'],
+        tech: ['React', 'Next.js', 'PostgreSQL', 'TypeScript', 'Express', 'JWT Authentication'],
         links: [
             { text: 'Github', url: 'https://github.com/ali-gunes/transparent-labour' },
-            { text: 'Live Demo', url: 'https://saydamemek.com' }
+            { text: 'Web App', url: 'https://saydamemek.com' }
         ]
     },
     'planning-poker': {
